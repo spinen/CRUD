@@ -15,8 +15,17 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
 <div class="row">
 	<div class="col-md-8 col-md-offset-2">
+=======
+@if ($crud->hasAccess('list'))
+	<a href="{{ starts_with(URL::previous(), url($crud->route)) ? URL::previous() : url($crud->route) }}" class="hidden-print"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::crud.back_to_all') }} <span>{{ $crud->entity_name_plural }}</span></a>
+@endif
+
+<div class="row m-t-20">
+	<div class="{{ $crud->getCreateContentClass() }}">
+>>>>>>> a77c81142 (cleaned up filters remember url logic)
 		<!-- Default box -->
 		@if ($crud->hasAccess('list'))
 			<a href="{{ url($crud->route) }}" class="hidden-print"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::crud.back_to_all') }} <span>{{ $crud->entity_name_plural }}</span></a><br><br>

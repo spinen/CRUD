@@ -26,6 +26,9 @@
         { fn = fn[ arr[i] ]; }
         fn.apply(window, args);
       },
+      updateUrl : function (new_url) {
+        window.history.pushState({}, '', new_url.replace('/search?', '?'));
+      },
       dataTableConfiguration: {
 
         @if ($crud->getResponsiveTable())
