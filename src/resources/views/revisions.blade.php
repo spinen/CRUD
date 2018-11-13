@@ -15,8 +15,16 @@
 @endsection
 
 @section('content')
+<<<<<<< HEAD
 <div class="row">
   <div class="col-md-10 col-md-offset-1">
+=======
+@if ($crud->hasAccess('list'))
+  <a href="{{ starts_with(URL::previous(), url($crud->route)) ? URL::previous() : url($crud->route) }}" class="hidden-print"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::crud.back_to_all') }} <span>{{ $crud->entity_name_plural }}</span></a>
+@endif
+<div class="row m-t-20">
+  <div class="{{ $crud->getRevisionsTimelineContentClass() }}">
+>>>>>>> a264ffe3b (show reorder revisions back buttons take you to filtered list view)
     <!-- Default box -->
     @if ($crud->hasAccess('list'))
       <a href="{{ url($crud->route) }}" class="hidden-print"><i class="fa fa-angle-double-left"></i> {{ trans('backpack::crud.back_to_all') }} <span>{{ $crud->entity_name_plural }}</span></a><br><br>
