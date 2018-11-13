@@ -64,6 +64,7 @@
         scrollX: true,
         @endif
 
+        stateSave: true,
         autoWidth: false,
         pageLength: {{ $crud->getDefaultPageLength() }},
         lengthMenu: @json($crud->getPageLengthMenu()),
