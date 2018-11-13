@@ -5,6 +5,12 @@
   <script src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
 
   <script>
+    // if there's a filtered URL saved for this list view, redirect to that one
+    var saved_list_url = localStorage.getItem('{{ $crud->entity_name_plural }}_list_url');
+    if (saved_list_url && saved_list_url!=window.location.href) {
+      window.location.href = localStorage.getItem('{{ $crud->entity_name_plural }}_list_url');
+    }
+
     var crud = {
       exportButtons: JSON.parse('{!! json_encode($crud->export_buttons) !!}'),
       functionsToRunOnDataTablesDrawEvent: [],
@@ -27,7 +33,9 @@
         fn.apply(window, args);
       },
       updateUrl : function (new_url) {
-        window.history.pushState({}, '', new_url.replace('/search?', '?'));
+        new_url = new_url.replace('/search?', '?');
+        window.history.pushState({}, '', new_url);
+        localStorage.setItem('{{ $crud->entity_name_plural }}_list_url', new_url);
       },
       dataTableConfiguration: {
 
@@ -67,7 +75,9 @@
         scrollX: true,
         @endif
 
+        @if ($crud->getPersistentTable())
         stateSave: true,
+        @endif
         autoWidth: false,
         pageLength: {{ $crud->getDefaultPageLength() }},
         lengthMenu: @json($crud->getPageLengthMenu()),
