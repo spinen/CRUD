@@ -19,6 +19,8 @@ All Notable changes to `Backpack CRUD` will be documented in this file
 ### Security
 - Nothing
 -----------
+## [3.4.44] - 2025-01-04
+Manual release to keep the code at 3.4.* but include the saving state data tables code from the upstream PR 1702. @see Laravel-Backpack#1702
 
 ## [3.4.43] - 2018-11-21
 
