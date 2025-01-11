@@ -1,6 +1,6 @@
 {
-    "name": "spinen/crud",
-    "description": "Forked from Backpack/CRUD: Quickly build an admin interface for your Eloquent models, using Laravel 5. Build a CMS in a matter of minutes.",
+    "name": "backpack/crud",
+    "description": "Quickly build an admin interface for your Eloquent models, using Laravel 5. Build a CMS in a matter of minutes.",
     "keywords": [
         "CRUD",
         "create",
@@ -13,7 +13,7 @@
         "content management system",
         "content management framework"
     ],
-    "homepage": "https://github.com/spinen/CRUD",
+    "homepage": "https://github.com/laravel-backpack/CRUD",
     "license": "MIT",
     "authors": [
         {
@@ -21,12 +21,6 @@
             "email": "hello@tabacitu.ro",
             "homepage": "http://www.tabacitu.ro",
             "role": "Chief Architect & Lead Developer"
-        },
-        {
-            "name": "SPINEN",
-            "email": "info@spinen.com",
-            "homepage": "https://spinen.com",
-            "role": "Developers"
         }
     ],
     "require": {
